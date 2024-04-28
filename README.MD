@@ -1,11 +1,16 @@
+# TeenyBios
+
+My attempt at a small bios for Qemu/8088/8086 systems.
+
+## Resources
+
+* Bios debugger
 https://github.com/Theldus/bread
-Bios debugger
 
 
 https://www.bios-mods.com/forum/showthread.php?tid=12083
 
-
-Scratch bios?
+* Scratch bios?
 https://pete.akeo.ie/2011/06/crafting-bios-from-scratch.html
 https://pete.akeo.ie/2011/07/introducing-ubrx-universal-bios.html
 https://github.com/pbatard/ubrx
