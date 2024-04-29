@@ -1,5 +1,5 @@
 #!/bin/bash
-BIOS=rom/bios.bin
+BIOS=rom/bios2.bin
 MEM="2G"
 HDD=disk.img
 
