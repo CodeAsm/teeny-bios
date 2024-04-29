@@ -5,7 +5,7 @@ OBJDUMP   = objdump
 OBJCOPY   = objcopy
  
 CFLAGS    = -m32
-LDFLAGS   = -mi386pep
+LDFLAGS   = -mi386pe
  
 OBJECTS   = bios.o
 TARGET    = bios
