@@ -11,6 +11,9 @@ Possibly as test targets aswell. A few dumped bioses are known to work, see the 
 |jetway_awd_600pgn_i815.BIN|pc|2G|base|7597537ee3e0a86689d83bdfa3cd645d| stuck at checking hardware |
 |GX150A07.ROM|pc|2G|base|752488cce0d9e98615fa6e546a0ad0d0| Will not run |
 |659_10.bin|pc|2G|486|2dbf49b4b8577d4ebdbf1e28e2d5da03|Runs, slight graphical glitches in the beginning|
+|bios.rom|pc|2G|486|3c528806a3774d31fb3766d8b184da90|"Hello BIOS world!" gets printed, thus succes|
+|bios.rom|pc|2G|pentium|3c528806a3774d31fb3766d8b184da90|"Hello BIOS world!" gets printed, thus succes|
+|bios.rom|pc|2G|kvm, host|3c528806a3774d31fb3766d8b184da90|"Hello BIOS world!" gets printed, thus succes|
 
 
 
@@ -55,3 +58,7 @@ https://pete.akeo.ie/2011/11/bin2coff.html
 
 http://bioshacking.blogspot.nl/
 https://sites.google.com/site/pinczakko
+
+* GLaBIOS
+https://glabios.org/
+https://github.com/640-KB/GLaBIOS/tree/main/src
