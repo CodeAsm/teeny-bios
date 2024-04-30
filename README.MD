@@ -62,3 +62,6 @@ https://sites.google.com/site/pinczakko
 * GLaBIOS
 https://glabios.org/
 https://github.com/640-KB/GLaBIOS/tree/main/src
+
+* 8088 Bios
+https://github.com/skiselev/8088_bios
