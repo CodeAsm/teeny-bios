@@ -52,7 +52,7 @@ COM_LSR       = 0x05    /* Line Status Register                                 
 /* This allows the .rom binary to be filled to the right size with objcopy.     */
 /********************************************************************************/
 .section begin, "a"             /* The 'ALLOC' flag is needed for objcopy       */
-        .ascii "VMBIOS v1.00"   /* Dummy ID string                              */
+        .ascii "TEENYBIOS v0.20"/* Dummy ID string                              */
         .align 16
 /********************************************************************************/
  
@@ -176,7 +176,7 @@ serial_conf:    /* See http://www.versalogic.com/kb/KB.asp?KBID=1395            
         .byte COM_BRD_HI,  0x00
         .byte COM_LCR,     0x03         /* Unset DLAB. Set 8N1 mode             */
 hello_string:
-        .string "\r\nHello BIOS world!\r\n" /* .string adds a NUL terminator    */
+        .string "\r\nHellorld! from TeenyBIOS\r\n" /* .string adds a NUL terminator */
 /********************************************************************************/
  
  
