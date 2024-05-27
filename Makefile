@@ -5,7 +5,7 @@ OBJDUMP   = objdump
 OBJCOPY   = objcopy
  
 CFLAGS    = -m32 -nostartfiles
-LDFLAGS   = #-mi386pe
+LDFLAGS   = -mi386pe
  
 OBJECTS   = bios.o
 TARGET    = bios
