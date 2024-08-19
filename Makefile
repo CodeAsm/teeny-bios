@@ -4,7 +4,7 @@ LD        = ld
 OBJDUMP   = objdump
 OBJCOPY   = objcopy
  
-CFLAGS    = -m32 -nostartfiles
+CFLAGS    = -m32 -nostartfiles #-g
 LDFLAGS   = -mi386pe
  
 OBJECTS   = bios.o
@@ -16,11 +16,11 @@ OBJCOPY_FLAGS = -Wno-warning-flag-here
  
 .PHONY: all clean
  
-all: $(TARGET).rom
+all: $(TARGET).rom $(TARGET).sym
  
 clean:
-	@-rm -f -v *.o $(TARGET).out $(MEMLAYOUT)
- 
+	@-rm -f -v *.o $(TARGET).out $(TARGET).rom $(TARGET).sym $(MEMLAYOUT)
+
 %.o: %.c Makefile
 	@echo "[CC]  $@"
 	@$(CC) -c -o $*.o $(CFLAGS) $<
@@ -44,3 +44,11 @@ $(TARGET).rom: $(TARGET).out
 	@echo "[ROM] $@"
 	@# Note: -j only works for sections that have the 'ALLOC' flag set
 	@$(OBJCOPY) $(OBJCOPY_FLAGS) -O binary -j .begin -j .main -j .reset --gap-fill=0x0ff $< $@
+
+# Symbol creation
+
+$(TARGET).sym: $(TARGET).o
+	@echo "[SYM] $@"
+	@$(OBJCOPY) --only-keep-debug $< $@
+	@$(OBJCOPY) --strip-debug $<
+	@$(OBJCOPY) --add-gnu-debuglink=$@ $<

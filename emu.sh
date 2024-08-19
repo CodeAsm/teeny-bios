@@ -7,5 +7,6 @@ qemu-system-i386 -m ${MEM}      \
     -cpu 486                    \
     -M pc                       \
     -bios ${BIOS}               \
-    -nographic
+    -nographic			\
+    -d in_asm -D debug.log
 #    -drive file=${HDD}
