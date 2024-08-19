@@ -1,6 +1,7 @@
-# TeenyBios
+# Teeny Bios
 
 My attempt at a small bios for Qemu/8088/8086 systems.
+for early testing, its based on Pete Batard's blog posts https://pete.akeo.ie/2011/06/crafting-bios-from-scratch.html and where he continues his work into ubrx https://github.com/pbatard/ubrx, i may deviate from there and go my own route.
 
 A couple of settings would help to know, to test bioses.
 Possibly as test targets aswell. A few dumped bioses are known to work, see the following table:
@@ -99,6 +100,15 @@ MOV AX, 0x5678
 OUT DX, AX
 
 ```
+
+## Plans, ideas
+
+As the title sais, what will I do with this?
+ - write to serial port on actual hardware i own
+ - write to video buffer thingy (if possible, very generic way)
+ - being able to be debugged using gdb or something
+ 
+I will not attempt to replace coreboot, nor will i add UEFI support. possibly will never attempt to boot anything, many more better bioses excist.
 
 
 ## Resources
