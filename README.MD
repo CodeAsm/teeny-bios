@@ -1,6 +1,6 @@
 # Teeny Bios
 
-My attempt at a small bios for Qemu/8088/8086 systems.
+My attempt at a small bios for Qemu/Real x86 systems.
 for early testing, its based on Pete Batard's blog posts https://pete.akeo.ie/2011/06/crafting-bios-from-scratch.html and where he continues his work into ubrx https://github.com/pbatard/ubrx, i may deviate from there and go my own route.
 
 *License/Copyright will be changed upon enough changes to the actual code.*
