@@ -29,15 +29,6 @@ Possibly as test targets aswell. A few dumped bioses are known to work, see the 
 |at386/at386.bin|pc|16m|486|d4a6cfdfd6334e0a6a42356424cebd28|stuck eventually at 0x27|
 |award286/award.bin|pc|16m|486|44e1dfa456043bed47a1a2907bd3bfee|eventually loops at 0x0d|iwc
 |cisco/PIX-515/AM29F400BT.bin|pc|64m|pentium2|1b0c9b81ace84fb7961f6b59d2a33040|Boots a serialcon, with Port80h it segfaults at 0x13|
-||pc|16m|486|||
-||pc|16m|486|||
-||pc|16m|486|||
-||pc|16m|486|||
-||pc|16m|486|||
-||pc|16m|486|||
-||pc|16m|486|||
-||pc|16m|486|||
-||pc|16m|486|||
 
 
 |430vx/vx29.bin|pc|2G|486|c9ce8598f9e31fbeaa1f76143feb09e0|coredumped after 80h 0x07|
