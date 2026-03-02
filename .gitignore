@@ -1,0 +1,21 @@
+# Legacy BIOS build artifacts
+*.o
+bios.out
+bios.rom
+bios.sym
+xMemLayout.map
+main.bin
+
+# UEFI bootloader build artifacts
+uefi/bootloader.so
+uefi/bootloader.o
+
+# Kernel build artifacts
+kernel/kernel.o
+kernel/kernel.elf
+
+# Disk image
+uefi.img
+
+# QEMU debug log
+debug.log
