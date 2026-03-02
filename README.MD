@@ -5,6 +5,57 @@ for early testing, its based on Pete Batard's blog posts https://pete.akeo.ie/20
 
 *License/Copyright will be changed upon enough changes to the actual code.*
 
+## UEFI Bootloader + TeenyKernel
+
+A minimal UEFI bootloader and a small DIY kernel have been added to the project.
+
+### Files
+
+| File | Description |
+|---|---|
+| `uefi/bootloader.c` | UEFI application (built with gnu-efi) that loads the kernel |
+| `uefi/bootinfo.h` | Shared `BootInfo` struct passed from bootloader to kernel |
+| `kernel/kernel.c` | Freestanding x86-64 kernel; writes to the VGA text buffer |
+| `kernel/kernel.ld` | Linker script — places the kernel at physical address `0x200000` |
+| `emu_uefi.sh` | QEMU launch script using OVMF |
+
+### How it works
+
+1. UEFI firmware (OVMF in QEMU) loads `EFI/BOOT/BOOTX64.EFI` from the ESP.
+2. The bootloader opens `kernel.bin` from the ESP root, allocates pages at
+   `0x200000`, and reads the flat binary there.
+3. A `BootInfo` struct is filled with the UEFI memory-map details.
+4. `ExitBootServices()` is called; the machine is now in bare-metal 64-bit mode.
+5. The bootloader jumps to `0x200000` — the `kernel_entry()` function.
+6. The kernel clears the VGA text buffer and prints boot information.
+
+### Build dependencies
+
+```sh
+sudo apt-get install gnu-efi ovmf mtools
+```
+
+### Build & run
+
+```sh
+# Build the UEFI bootloader EFI application
+make uefi
+
+# Build the flat-binary kernel
+make kernel
+
+# Create a bootable FAT32 disk image
+make uefi-disk
+
+# Launch in QEMU with OVMF  (Ctrl-A X to quit)
+make run-uefi
+# — or —
+./emu_uefi.sh
+```
+
+---
+
+
 A couple of settings would help to know, to test bioses.
 Possibly as test targets aswell. A few dumped bioses are known to work, see the following table:
 
