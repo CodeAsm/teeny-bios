@@ -61,7 +61,6 @@ void kernel_entry(BootInfo *binfo)
     /* Show mmap_base */
     vga_print_row(2, "  mmap_base      = 0x");
     hex64(hexbuf, binfo ? binfo->mmap_base : 0ULL);
-    vga_print_row(2, "  mmap_base      = 0x");
     {
         volatile unsigned short *vga = VGA_BASE + 2 * VGA_COLS + 22;
         for (int i = 0; hexbuf[i]; i++)
